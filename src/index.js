@@ -11,7 +11,11 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded());
 /* aqui é o acesso exerno do sistema para a api */
-
+app.use(cors({
+  origin: ["https://portalnoticiasinfoa.vercel.app/", "https://urban-winner-q7vq67647jrwh4g5w-3000.app.github.dev/"], // domínio do seu front
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: "Content-Type,Authorization"
+}));
 //rotas
 require('../db/dbconnect')(app);
 require('../route/home')(app);
