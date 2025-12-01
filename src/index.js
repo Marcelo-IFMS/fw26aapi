@@ -1,10 +1,12 @@
 const express = require('express');
+const bodyParser = require("body-parser");
 const app = express();
 const port = 3000
 
 app.set("view engine", "ejs")
 app.set("views", "./views")
 
+const bodyParser = require("body-parser");
 /* estas linhas são para leitura de de body.json */
 app.use(express.json());
 app.use(express.urlencoded());
