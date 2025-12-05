@@ -1,6 +1,7 @@
 const { ObjectId } = require("mongodb")
 module.exports = (app) => {
     app.delete("/delnoticias", async (req, res) => {
+        console.log("passou")
         try {
             const _id = ObjectId.createFromHexString(req.body._id)
             await app.DBClient.connect()
