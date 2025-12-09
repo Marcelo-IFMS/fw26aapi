@@ -13,7 +13,6 @@ module.exports = (app) => {
                     {
                         $set: { titulonoticia: titulonoticia, conteudonoticia: conteudonoticia, tiponoticia: tiponoticia }
                     })
-            console.log(resultado)
             if (!resultado.modifiedCount) {
                 throw new Error();
             } else { res.status(200).json({ status: 1 }) }
